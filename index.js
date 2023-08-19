@@ -21,4 +21,34 @@ const maxSideLenN = (m, n, r, c) => {
   return Math.min(c + 1, n - c, Math.ceil((m - r + 1) / 2));
 };
 
-module.exports = { maxSideLenN };
+const sideSum = (grid, R, C, r, c) => {
+  const sideSums = {};
+  const sideSumWMemo = (R, C, r, c) => {
+    if (sideSums[`${R}#${C}#${r}#${c}`]) {
+      // console.log(`returning sideSums[${R}#${C}#${r}#${c}]`)
+      return sideSums[`${R}#${C}#${r}#${c}`];
+    }
+    // base case
+    if (R === r && C === c) {
+      sideSums[`${R}#${C}#${r}#${c}`] = grid[R][C];
+      return grid[R][C];
+    }
+    // recursive case
+    const goWest = c > C;
+    const goEast = !goWest;
+    if (goWest) {
+      sideSums[`${R}#${C}#${r}#${c}`] =
+        grid[r][c] + sideSumWMemo(R, C, r - 1, c - 1);
+      return sideSums[`${R}#${C}#${r}#${c}`];
+    }
+    if (goEast) {
+      console.log("going east")
+      sideSums[`${R}#${C}#${r}#${c}`] =
+        grid[r][c] + sideSumWMemo(R, C, r - 1, c + 1);
+      return sideSums[`${R}#${C}#${r}#${c}`];
+    }
+  };
+  return sideSumWMemo(R, C, r, c);
+};
+
+module.exports = { maxSideLenN, sideSum };
