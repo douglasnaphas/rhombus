@@ -1,0 +1,22 @@
+{
+  "name": "rhombus",
+  "version": "1.0.0",
+  "description": "Various calculations related to rhombi on grids.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/douglasnaphas/rhombus.git"
+  },
+  "author": "Douglas Naphas <douglasnaphas@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/douglasnaphas/rhombus/issues"
+  },
+  "homepage": "https://github.com/douglasnaphas/rhombus#readme",
+  "devDependencies": {
+    "jest": "^29.6.2"
+  }
+}
