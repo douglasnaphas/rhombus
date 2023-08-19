@@ -31,6 +31,13 @@ describe("rhombus", () => {
         c: 5,
         expected: 3,
       },
+      {
+        m: 3,
+        n: 3,
+        r: 1,
+        c: 1,
+        expected: 1,
+      },
     ])("$m, $n, $r, $c -> $expected", ({ m, n, r, c, expected }) => {
       expect(maxSideLenN(m, n, r, c)).toEqual(expected);
       expect(true).toBe(true);

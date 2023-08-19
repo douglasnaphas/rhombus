@@ -18,7 +18,7 @@ const maxSideLenN = (m, n, r, c) => {
   // 2s <= m + 1 - r
   // s <= ceil((m - r + 1) / 2)
 
-  return Math.min(c + 1, n - c, Math.ceil((m - r + 1) / 2));
+  return Math.min(c + 1, n - c, Math.floor((m - r + 1) / 2));
 };
 
 const sideSum = (grid, R, C, r, c) => {
